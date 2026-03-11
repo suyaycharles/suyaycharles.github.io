@@ -182,17 +182,44 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
+.profile-container {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	flex-wrap: wrap; /* permite que se acomoden verticalmente en pantallas pequeñas */
+}
 
-/* Type */
+.profile-img {
+	flex: 0 0 40%; /* ocupa hasta 40% del contenedor en pantallas grandes */
+	max-width: 300px; /* no crece más que esto */
+}
 
+.profile-text {
+	flex: 1 1 50%; /* ocupa el resto del espacio y se encoge si hace falta */
+	min-width: 200px; /* evita que se haga demasiado pequeño */
+}
+
+/* Opcional: ajustes específicos para móviles */
+@media screen and (max-width: 768px) {
+	.profile-container {
+		flex-direction: column; /* imagen arriba, texto abajo */
+		align-items: center;
+		text-align: center;
+	}
+
+	.profile-img, .profile-text {
+		flex: 1 1 100%;
+		max-width: 90%; /* ocupa casi todo el ancho */
+	}
+}
 	html {
-		font-size: 12pt;
+		font-size: 10pt;
 	}
 
 		@media screen and (max-width: 1680px) {
 
 			html {
-				font-size: 12pt;
+				font-size: 10pt;
 			}
 
 		}
@@ -200,7 +227,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			html {
-				font-size: 11pt;
+				font-size: 10pt;
 			}
 
 		}
