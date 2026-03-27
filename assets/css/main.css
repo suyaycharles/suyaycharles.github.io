@@ -198,6 +198,15 @@ input, select, textarea {
 	flex: 1 1 50%; /* ocupa el resto del espacio y se encoge si hace falta */
 	min-width: 200px; /* evita que se haga demasiado pequeño */
 }
+ul.icons li.mobile-only {
+	display: none !important;
+}
+
+@media screen and (max-width: 980px) {
+	ul.icons li.mobile-only {
+		display: inline-block !important;
+	}
+}
 
 /* Opcional: ajustes específicos para móviles */
 @media screen and (max-width: 768px) {
